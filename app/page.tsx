@@ -47,7 +47,9 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button href="#dates">Upcoming dates</Button>
-              <TextLink href="#what-a-walk-is">What to expect</TextLink>
+              <Button href="#what-a-walk-is" variant="secondary">
+                What to expect
+              </Button>
             </div>
           </div>
           <PhotoSlot
@@ -232,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* 8. Email signup */}
-      <section id="signup" className="bg-birch">
+      <section id="signup" className="bg-lichen">
         <div className="mx-auto max-w-6xl px-6 py-16 text-center md:py-24">
           <h2 className={`${heading} text-3xl sm:text-4xl`}>
             Hear about new walks first
