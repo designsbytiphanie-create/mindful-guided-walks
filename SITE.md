@@ -26,7 +26,7 @@
 
 ## Homepage Sections
 
-1. **Hero** — split layout, Lichen color panel + forest photo slot. Buttons jump to on-page anchors (`#dates`, `#what-a-walk-is`).
+1. **Hero** — full-bleed split layout, Deep Moss color panel (Birch text, inverted buttons) + full-bleed forest photo. Buttons jump to on-page anchors (`#dates`, `#what-a-walk-is`).
 2. **What a walk is** — Birch background, three-step numbered list (We gather / We walk slowly / We sit for tea).
 3. **Upcoming dates** (`#dates`) — Lichen background, three walk cards (image, date, location, time, price) — card details are placeholder data, see below.
 4. **Meet the guide** (`#guide`) — Birch background, portrait + placeholder bio for Terry.
@@ -36,11 +36,13 @@
 8. **Email signup** (`#signup`) — Lichen background. A static facts row ("TWO HOURS · HALF A MILE · SMALL GROUPS · TEA AT THE END") sits above a Birch card containing the heading, a 560px-wide email field + Sign me up button (front-end only, not wired to an email service yet), and a reassurance line.
 9. **Footer** — wordmark, tagline, location, repeated nav, Liability waiver + Instagram links.
 
+**Section colour sequence (top to bottom):** Hero (Deep Moss) → What a walk is (Birch) → Upcoming dates (Lichen) → Meet the guide (Birch) → Why it works (Deep Moss) → Bedrock Babes (Birch) → Corporate (Birch, Loam card inset) → Email signup (Lichen) → Footer (Deep Moss). No two adjacent sections share a saturated background color — Birch (the neutral base) is the only color that ever repeats back-to-back (Bedrock Babes → Corporate).
+
 ## Components
 
 - **Navbar** (`components/Navbar.tsx`) — wordmark, nav links, Contact button, mobile hamburger menu. Lives in the root layout so it's on every page.
 - **Footer** (`components/Footer.tsx`) — also in the root layout.
-- **Button** (`components/Button.tsx`) — primary / primary-inverted variants.
+- **Button** (`components/Button.tsx`) — primary / primary-inverted / secondary / secondary-inverted variants. Inverted variants are for dark backgrounds (Birch fill or Birch outline instead of Fern/Loam).
 - **TextLink** (`components/TextLink.tsx`) — underlined inline links, separate from buttons.
 - **PhotoSlot** (`components/PhotoSlot.tsx`) — placeholder for photography: Lichen fill with "Photograph" in Loam at 14px, until real photos are supplied.
 - **EmailSignupForm** (`components/EmailSignupForm.tsx`) — the signup form.
@@ -62,7 +64,9 @@
 
 Once you send over photos and the missing text, I'll drop them in.
 
-**Hero photo — done, real photography in place.** `public/images/hero-forest.jpg` is your supplied Unsplash forest photo (2000×3000, resized down from the original 4000×6000 for repo size — still far above what's needed at any screen size). The hero is a full-bleed split: on mobile the photo runs edge to edge above the text at a fixed 4:5 aspect ratio; from tablet width up, it's absolutely positioned to fill the entire right half of the section — edge to edge horizontally, and from the bottom of the nav to the bottom of the section vertically — so its rendered proportions actually change with viewport height and aren't a fixed ratio at that size. If you ever need to supply a replacement for this slot: **portrait orientation, at least 2000×3000px** covers every breakpoint safely; anything shot vertically at a normal high-resolution camera/phone size will be more than enough.
+**Hero photo — done, real photography in place.** `public/images/hero-forest.jpg` is your supplied Unsplash forest photo (2400×1594, resized down from the original 6000×3985 for repo size — still far above what's needed at any screen size). The hero is a full-bleed split: on mobile the photo runs edge to edge above the text at a fixed 4:5 aspect ratio; from tablet width up, it's absolutely positioned to fill the entire right half of the section — edge to edge horizontally, and from the bottom of the nav to the bottom of the section vertically — so its rendered proportions actually change with viewport height and aren't a fixed ratio at that size. If you ever need to supply a replacement: **either orientation works, minimum 2400px on the longer side** covers every breakpoint safely (object-cover crops it to fit either the mobile 4:5 band or the fluid desktop height).
+
+**Hero photo has a saturation filter applied** (`saturate(0.65)` in `app/page.tsx`) so its greens sit with the muted Lichen/Deep Moss palette rather than reading as bright stock photography. This is a CSS filter, fine for this Next.js mockup — **but it will not survive the Squarespace rebuild as CSS.** Squarespace doesn't offer a reliable per-image CSS-filter hook without custom code injection on every page that uses it, which is a maintenance risk (breaks silently if a template update changes image markup, and has to be reapplied on every new hero-style photo). **When this gets rebuilt in Squarespace, bake the desaturation into the exported image file itself** (in Photoholding software, reduce saturation by roughly the same amount, ~65% of original) rather than relying on a CSS filter.
 
 ## How to Customize
 
@@ -91,3 +95,4 @@ This site is a working reference for a future Squarespace 7.1 rebuild. Two thing
 - 2026-09-20: Removed unconfirmed group-size numbers from copy (facts row and "We gather" step now say "small group(s)" instead of a specific number). Removed the Fraunces WONK axis setting — Squarespace can't control it and we couldn't verify it would survive the move, so it wasn't worth the dependency; weight stays at 500. Added Squarespace Build Notes documenting the walk-dates-as-Collection plan and the exact fallback-safe CSS approach for the Corporate/signup card treatments.
 - 2026-09-20: Generated a hero forest photo with ChatGPT (real/grounded per Terry's direction, not ethereal) and wired it into the hero section at `public/images/hero-forest.jpg` — the one image on the page that's no longer a plain placeholder. Flagged it clearly as AI-generated and temporary; every other image slot stays a placeholder until real photography arrives.
 - 2026-09-20: Rebuilt the hero as a true full-bleed split — the photo now runs edge to edge with no margin, frame, or corner radius, filling the entire right half of the section from the bottom of the nav to the bottom of the section (mobile: full width above the text instead). Replaced the AI-generated placeholder with the client's real supplied photo (resized from 4000×6000 to 2000×3000 for repo size). The hero photo is done — no longer a placeholder and no longer flagged for replacement.
+- 2026-09-20: Matched the hero to the approved Figma design — panel color flipped from Lichen to Deep Moss, all hero text to Birch, both buttons to their inverted (dark-background) styles. Added a `secondary-inverted` Button variant for this. Swapped in a second real hero photo (client-supplied, landscape, resized from 6000×3985 to 2400×1594) and applied `saturate(0.65)` so its greens read as part of the palette rather than louder than it — documented as a CSS-only treatment that must be baked into the file before the Squarespace rebuild.

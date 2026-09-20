@@ -1,7 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type ButtonVariant = "primary" | "primary-inverted" | "secondary";
+type ButtonVariant =
+  | "primary"
+  | "primary-inverted"
+  | "secondary"
+  | "secondary-inverted";
 
 const base =
   "inline-flex items-center justify-center rounded-[22px_2px_22px_2px] px-6 py-3 text-base font-semibold transition-colors";
@@ -11,6 +15,8 @@ const variants: Record<ButtonVariant, string> = {
   "primary-inverted": "bg-birch text-forest-ink hover:bg-lichen",
   secondary:
     "ring-1 ring-inset ring-loam bg-transparent text-forest-ink hover:bg-loam/10",
+  "secondary-inverted":
+    "ring-1 ring-inset ring-birch bg-transparent text-birch hover:bg-birch/10",
 };
 
 export function Button({

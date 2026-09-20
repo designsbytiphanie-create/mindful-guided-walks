@@ -36,28 +36,30 @@ export default function Home() {
   return (
     <main>
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-lichen">
+      <section className="relative overflow-hidden bg-deep-moss">
         <div className="relative aspect-[4/5] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:w-1/2">
           <Image
             src="/images/hero-forest.jpg"
-            alt="Tall forest trees with sunbeams breaking through the canopy over a dirt path"
+            alt="Tall forest trees with warm evening light filtering through the canopy"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover saturate-[.65]"
             priority
           />
         </div>
         <div className="relative px-6 py-16 md:w-1/2 md:px-12 md:py-24 lg:px-16">
-          <p className={`${eyebrow} text-loam`}>GO OUTSIDE · GO WITHIN</p>
-          <h1 className={`${heading} mt-4 text-4xl leading-tight sm:text-5xl`}>
+          <p className={`${eyebrow} text-birch`}>GO OUTSIDE · GO WITHIN</p>
+          <h1 className="heading-type mt-4 text-4xl font-medium leading-tight text-birch sm:text-5xl">
             The forest is already working. We slow down enough to notice.
           </h1>
-          <p className={`mt-6 ${measureIntro} text-lg text-forest-ink`}>
+          <p className={`mt-6 ${measureIntro} text-lg text-birch`}>
             Two hours. Half a mile. A tea ceremony among the trees.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="#dates">Upcoming dates</Button>
-            <Button href="#what-a-walk-is" variant="secondary">
+            <Button href="#dates" variant="primary-inverted">
+              Upcoming dates
+            </Button>
+            <Button href="#what-a-walk-is" variant="secondary-inverted">
               What to expect
             </Button>
           </div>
