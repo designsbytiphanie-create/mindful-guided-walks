@@ -36,18 +36,18 @@ export default function Home() {
   return (
     <main>
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-deep-moss">
-        <div className="relative aspect-[4/5] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:w-1/2">
+      <section className="relative overflow-hidden bg-deep-moss md:flex md:min-h-[max(720px,calc(100vh-89px))] md:items-center lg:min-h-[max(720px,calc(100vh-81px))]">
+        <div className="relative aspect-[4/5] min-h-[420px] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:min-h-0 md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
             alt="Tall forest trees with warm evening light filtering through the canopy"
             fill
-            sizes="(min-width: 768px) 50vw, 100vw"
+            sizes="(min-width: 768px) 55vw, 100vw"
             className="object-cover saturate-[.65]"
             priority
           />
         </div>
-        <div className="relative px-6 py-16 md:w-1/2 md:px-12 md:py-24 lg:px-16">
+        <div className="relative px-6 py-16 md:w-[45%] md:px-12 md:py-24 lg:px-16">
           <p className={`${eyebrow} text-birch`}>GO OUTSIDE · GO WITHIN</p>
           <h1 className="heading-type mt-4 text-4xl font-medium leading-tight text-birch sm:text-5xl">
             The forest is already working. We slow down enough to notice.
