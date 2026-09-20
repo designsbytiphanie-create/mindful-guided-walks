@@ -3,11 +3,14 @@
 export function EmailSignupForm() {
   return (
     <form
-      className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row sm:items-end"
+      className="mx-auto flex w-full max-w-[560px] flex-col gap-4 sm:flex-row sm:items-end"
       onSubmit={(e) => e.preventDefault()}
     >
       <div className="flex flex-1 flex-col gap-2 text-left">
-        <label htmlFor="signup-email" className="text-base font-medium text-forest-ink">
+        <label
+          htmlFor="signup-email"
+          className="text-base font-medium text-forest-ink"
+        >
           Email
         </label>
         <input
@@ -15,7 +18,7 @@ export function EmailSignupForm() {
           type="email"
           name="email"
           required
-          className="w-full rounded-[8px] border border-loam bg-birch px-4 py-3 text-base text-forest-ink placeholder:text-forest-ink/50"
+          className="w-full rounded-lg bg-lichen px-4 py-3 text-base text-forest-ink ring-1 ring-inset ring-loam placeholder:text-forest-ink/60"
           placeholder="you@example.com"
         />
       </div>

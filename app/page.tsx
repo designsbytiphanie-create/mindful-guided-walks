@@ -235,12 +235,20 @@ export default function Home() {
 
       {/* 8. Email signup */}
       <section id="signup" className="bg-lichen">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center md:py-24">
-          <h2 className={`${heading} text-3xl sm:text-4xl`}>
-            Hear about new walks first
-          </h2>
-          <div className="mt-8">
-            <EmailSignupForm />
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+          <p className={`${eyebrow} text-loam text-center`}>
+            TWO HOURS · HALF A MILE · NEVER MORE THAN TEN · TEA AT THE END
+          </p>
+          <div className="mx-auto mt-8 max-w-[656px] rounded-lg bg-birch p-8 text-center md:p-12">
+            <h2 className={`${heading} text-3xl sm:text-4xl`}>
+              Hear about new walks first
+            </h2>
+            <div className="mt-8">
+              <EmailSignupForm />
+            </div>
+            <p className="mt-4 text-base text-loam">
+              A short note when new dates are posted. Nothing else.
+            </p>
           </div>
         </div>
       </section>

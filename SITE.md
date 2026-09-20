@@ -33,7 +33,7 @@
 5. **Why it works** (`#why-it-works`) — Deep Moss background, Birch text, forest bathing explainer.
 6. **Bedrock Babes** (`#bedrock-babes`) — Birch background, centered, extra whitespace, one photo slot.
 7. **Corporate** (`#corporate`) — Birch section with a Loam card (rounded, hugs its content) holding the copy and Enquire button, so it doesn't read as an empty full-bleed color band.
-8. **Email signup** (`#signup`) — Lichen background, email field + Sign me up button (front-end only, not wired to an email service yet).
+8. **Email signup** (`#signup`) — Lichen background. A static facts row ("TWO HOURS · HALF A MILE · NEVER MORE THAN TEN · TEA AT THE END") sits above a Birch card containing the heading, a 560px-wide email field + Sign me up button (front-end only, not wired to an email service yet), and a reassurance line.
 9. **Footer** — wordmark, tagline, location, repeated nav, Liability waiver + Instagram links.
 
 ## Components
@@ -73,3 +73,4 @@ Once you send over photos and the missing text, I'll drop them in.
 
 - 2026-09-20: Built the homepage from your detailed brief — brand colors/fonts, navigation, footer, and all 9 homepage sections with your exact copy. Flagged placeholder content (guide bio, walk card details, Instagram link) and listed required photo slots above.
 - 2026-09-20: Consistency pass — separated the email signup section from Corporate/Footer with a Birch band so colored sections never sit adjacent; converted ambiguous button-styled links to real underlined text links; unified all body text onto two shared width measures; fixed the Meet-the-guide section's image-driven padding asymmetry; matched the footer tagline's letter spacing to the eyebrows; rebuilt Corporate as a contained card instead of a full-bleed band; introduced a two-tier heading hierarchy (What a walk is / Upcoming dates read larger); changed heading font to Fraunces weight 500 with conventional (WONK 0) letterforms; renamed the ambiguous "What a walk is" link to "What to expect."
+- 2026-09-20: Made the hero's "What to expect" a real secondary button (was a mismatched text link) matching the primary button's height exactly; reverted email signup back to Lichen so Bedrock Babes/Corporate/Footer don't read as an unbroken Birch run; rebuilt the signup section as a static facts row above a Birch card containing a wider (560px), height-matched email field + button and a reassurance line.
