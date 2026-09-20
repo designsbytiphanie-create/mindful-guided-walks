@@ -52,18 +52,17 @@
 - All three walk cards in "Upcoming dates" — need real date, location, time, and price for each.
 - Instagram footer link currently points to `#` — needs your real Instagram URL.
 
-**Image slots needed (all currently gray "Photograph" placeholders except the hero, see below):**
+**Image slots still needed (all currently gray "Photograph" placeholders):**
 
 | Slot | Where | Aspect ratio | Minimum file size (2x) |
 |---|---|---|---|
-| Hero forest photo | Hero section, right side | 4:5 (portrait) | 1200×1500px |
 | Guide portrait | Meet the guide section | 4:5 (portrait) | 960×1200px |
 | Walk card photos (×3) | Upcoming dates cards | 1:1 (square) | 800×800px |
 | Bedrock Babes photo | Bedrock Babes section | 3:2 (landscape) | 1600×1067px |
 
 Once you send over photos and the missing text, I'll drop them in.
 
-**⚠️ Hero photo is an AI-generated placeholder, not real photography.** `public/images/hero-forest.jpg` (1024×1536, generated via ChatGPT to hold the spot and give a sense of the finished look) is wired into the hero section right now. **This must be replaced with real photography from Terry before launch** — everywhere else on the page still shows the plain "Photograph" placeholder deliberately, so this is the one exception to flag. When real hero photography arrives, swap the file at that path (or update the `src` in `app/page.tsx`'s hero section) and remove this note.
+**Hero photo — done, real photography in place.** `public/images/hero-forest.jpg` is your supplied Unsplash forest photo (2000×3000, resized down from the original 4000×6000 for repo size — still far above what's needed at any screen size). The hero is a full-bleed split: on mobile the photo runs edge to edge above the text at a fixed 4:5 aspect ratio; from tablet width up, it's absolutely positioned to fill the entire right half of the section — edge to edge horizontally, and from the bottom of the nav to the bottom of the section vertically — so its rendered proportions actually change with viewport height and aren't a fixed ratio at that size. If you ever need to supply a replacement for this slot: **portrait orientation, at least 2000×3000px** covers every breakpoint safely; anything shot vertically at a normal high-resolution camera/phone size will be more than enough.
 
 ## How to Customize
 
@@ -91,3 +90,4 @@ This site is a working reference for a future Squarespace 7.1 rebuild. Two thing
 - 2026-09-20: Made the hero's "What to expect" a real secondary button (was a mismatched text link) matching the primary button's height exactly; reverted email signup back to Lichen so Bedrock Babes/Corporate/Footer don't read as an unbroken Birch run; rebuilt the signup section as a static facts row above a Birch card containing a wider (560px), height-matched email field + button and a reassurance line.
 - 2026-09-20: Removed unconfirmed group-size numbers from copy (facts row and "We gather" step now say "small group(s)" instead of a specific number). Removed the Fraunces WONK axis setting — Squarespace can't control it and we couldn't verify it would survive the move, so it wasn't worth the dependency; weight stays at 500. Added Squarespace Build Notes documenting the walk-dates-as-Collection plan and the exact fallback-safe CSS approach for the Corporate/signup card treatments.
 - 2026-09-20: Generated a hero forest photo with ChatGPT (real/grounded per Terry's direction, not ethereal) and wired it into the hero section at `public/images/hero-forest.jpg` — the one image on the page that's no longer a plain placeholder. Flagged it clearly as AI-generated and temporary; every other image slot stays a placeholder until real photography arrives.
+- 2026-09-20: Rebuilt the hero as a true full-bleed split — the photo now runs edge to edge with no margin, frame, or corner radius, filling the entire right half of the section from the bottom of the nav to the bottom of the section (mobile: full width above the text instead). Replaced the AI-generated placeholder with the client's real supplied photo (resized from 4000×6000 to 2000×3000 for repo size). The hero photo is done — no longer a placeholder and no longer flagged for replacement.

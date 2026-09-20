@@ -36,32 +36,30 @@ export default function Home() {
   return (
     <main>
       {/* 1. Hero */}
-      <section className="bg-lichen">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:items-center md:py-24">
-          <div>
-            <p className={`${eyebrow} text-loam`}>GO OUTSIDE · GO WITHIN</p>
-            <h1 className={`${heading} mt-4 text-4xl leading-tight sm:text-5xl`}>
-              The forest is already working. We slow down enough to notice.
-            </h1>
-            <p className={`mt-6 ${measureIntro} text-lg text-forest-ink`}>
-              Two hours. Half a mile. A tea ceremony among the trees.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href="#dates">Upcoming dates</Button>
-              <Button href="#what-a-walk-is" variant="secondary">
-                What to expect
-              </Button>
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] w-full max-w-[1024px] overflow-hidden">
-            <Image
-              src="/images/hero-forest.jpg"
-              alt="A narrow dirt path curving through a sunlit New England forest, ferns and tall trees on either side"
-              fill
-              sizes="(min-width: 768px) 532px, 100vw"
-              className="object-cover"
-              priority
-            />
+      <section className="relative overflow-hidden bg-lichen">
+        <div className="relative aspect-[4/5] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:w-1/2">
+          <Image
+            src="/images/hero-forest.jpg"
+            alt="Tall forest trees with sunbeams breaking through the canopy over a dirt path"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="relative px-6 py-16 md:w-1/2 md:px-12 md:py-24 lg:px-16">
+          <p className={`${eyebrow} text-loam`}>GO OUTSIDE · GO WITHIN</p>
+          <h1 className={`${heading} mt-4 text-4xl leading-tight sm:text-5xl`}>
+            The forest is already working. We slow down enough to notice.
+          </h1>
+          <p className={`mt-6 ${measureIntro} text-lg text-forest-ink`}>
+            Two hours. Half a mile. A tea ceremony among the trees.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Button href="#dates">Upcoming dates</Button>
+            <Button href="#what-a-walk-is" variant="secondary">
+              What to expect
+            </Button>
           </div>
         </div>
       </section>
