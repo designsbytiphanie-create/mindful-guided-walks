@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/Button";
 import { TextLink } from "@/components/TextLink";
 import { PhotoSlot } from "@/components/PhotoSlot";
@@ -52,11 +53,16 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <PhotoSlot
-            aspect="aspect-[4/5]"
-            name="Hero forest photograph"
-            className="w-full"
-          />
+          <div className="relative aspect-[4/5] w-full max-w-[1024px] overflow-hidden">
+            <Image
+              src="/images/hero-forest.jpg"
+              alt="A narrow dirt path curving through a sunlit New England forest, ferns and tall trees on either side"
+              fill
+              sizes="(min-width: 768px) 532px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
 

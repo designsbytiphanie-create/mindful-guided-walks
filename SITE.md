@@ -52,7 +52,7 @@
 - All three walk cards in "Upcoming dates" — need real date, location, time, and price for each.
 - Instagram footer link currently points to `#` — needs your real Instagram URL.
 
-**Image slots needed (all currently gray "Photograph" placeholders):**
+**Image slots needed (all currently gray "Photograph" placeholders except the hero, see below):**
 
 | Slot | Where | Aspect ratio | Minimum file size (2x) |
 |---|---|---|---|
@@ -63,11 +63,14 @@
 
 Once you send over photos and the missing text, I'll drop them in.
 
+**⚠️ Hero photo is an AI-generated placeholder, not real photography.** `public/images/hero-forest.jpg` (1024×1536, generated via ChatGPT to hold the spot and give a sense of the finished look) is wired into the hero section right now. **This must be replaced with real photography from Terry before launch** — everywhere else on the page still shows the plain "Photograph" placeholder deliberately, so this is the one exception to flag. When real hero photography arrives, swap the file at that path (or update the `src` in `app/page.tsx`'s hero section) and remove this note.
+
 ## How to Customize
 
 - **Colors:** all defined once in `app/globals.css` — change a hex value there and it updates everywhere.
 - **Copy:** edit the text directly in `app/page.tsx`.
 - **Add a new page:** create a new folder in `app/` with a `page.tsx` inside, e.g. `app/about/page.tsx` for `/about`.
+- **Real images live in `public/images/`**, named for what they show (e.g. `hero-forest.jpg`). That's the convention going forward as real photography replaces the remaining placeholders.
 
 ## Squarespace Build Notes
 
@@ -87,3 +90,4 @@ This site is a working reference for a future Squarespace 7.1 rebuild. Two thing
 - 2026-09-20: Consistency pass — separated the email signup section from Corporate/Footer with a Birch band so colored sections never sit adjacent; converted ambiguous button-styled links to real underlined text links; unified all body text onto two shared width measures; fixed the Meet-the-guide section's image-driven padding asymmetry; matched the footer tagline's letter spacing to the eyebrows; rebuilt Corporate as a contained card instead of a full-bleed band; introduced a two-tier heading hierarchy (What a walk is / Upcoming dates read larger); changed heading font to Fraunces weight 500 with conventional (WONK 0) letterforms; renamed the ambiguous "What a walk is" link to "What to expect."
 - 2026-09-20: Made the hero's "What to expect" a real secondary button (was a mismatched text link) matching the primary button's height exactly; reverted email signup back to Lichen so Bedrock Babes/Corporate/Footer don't read as an unbroken Birch run; rebuilt the signup section as a static facts row above a Birch card containing a wider (560px), height-matched email field + button and a reassurance line.
 - 2026-09-20: Removed unconfirmed group-size numbers from copy (facts row and "We gather" step now say "small group(s)" instead of a specific number). Removed the Fraunces WONK axis setting — Squarespace can't control it and we couldn't verify it would survive the move, so it wasn't worth the dependency; weight stays at 500. Added Squarespace Build Notes documenting the walk-dates-as-Collection plan and the exact fallback-safe CSS approach for the Corporate/signup card treatments.
+- 2026-09-20: Generated a hero forest photo with ChatGPT (real/grounded per Terry's direction, not ethereal) and wired it into the hero section at `public/images/hero-forest.jpg` — the one image on the page that's no longer a plain placeholder. Flagged it clearly as AI-generated and temporary; every other image slot stays a placeholder until real photography arrives.
