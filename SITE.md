@@ -13,7 +13,7 @@
   - Deep Moss `#33482F` — dark bands and hover states
   - Loam `#5B4633` — earth tone, borders
   - Forest Ink `#141C13` — headings and body text
-- **Fonts:** Fraunces at weight 500 with the WONK axis set to 0 for conventional letterforms (headings + both wordmarks), Literata Regular (body) — both loaded from Google Fonts via `next/font` as full variable fonts.
+- **Fonts:** Fraunces at weight 500 (headings + both wordmarks), Literata Regular (body) — both loaded from Google Fonts via `next/font` as full variable fonts. (We tried pinning Fraunces' WONK axis to 0 for more conventional letterforms, then removed it — Squarespace's font picker doesn't expose variable-font axis controls, so it wouldn't have survived the move and wasn't worth depending on.)
 - **Buttons:** Leaf-shaped radius (22px/2px/22px/2px, sharp corners top-right and bottom-left). Primary = Fern fill + Forest Ink text (inverts to Birch fill on dark backgrounds).
 - **Text links** (as opposed to buttons): underlined, Loam on light backgrounds / Lichen on dark, with a Deep Moss/Birch hover shift. Used for secondary, non-CTA actions like "What to expect" and "See all dates."
 - **Text measures:** two shared widths only — 672px for section intros, 448px for supporting/list body copy.
@@ -33,7 +33,7 @@
 5. **Why it works** (`#why-it-works`) — Deep Moss background, Birch text, forest bathing explainer.
 6. **Bedrock Babes** (`#bedrock-babes`) — Birch background, centered, extra whitespace, one photo slot.
 7. **Corporate** (`#corporate`) — Birch section with a Loam card (rounded, hugs its content) holding the copy and Enquire button, so it doesn't read as an empty full-bleed color band.
-8. **Email signup** (`#signup`) — Lichen background. A static facts row ("TWO HOURS · HALF A MILE · NEVER MORE THAN TEN · TEA AT THE END") sits above a Birch card containing the heading, a 560px-wide email field + Sign me up button (front-end only, not wired to an email service yet), and a reassurance line.
+8. **Email signup** (`#signup`) — Lichen background. A static facts row ("TWO HOURS · HALF A MILE · SMALL GROUPS · TEA AT THE END") sits above a Birch card containing the heading, a 560px-wide email field + Sign me up button (front-end only, not wired to an email service yet), and a reassurance line.
 9. **Footer** — wordmark, tagline, location, repeated nav, Liability waiver + Instagram links.
 
 ## Components
@@ -69,8 +69,21 @@ Once you send over photos and the missing text, I'll drop them in.
 - **Copy:** edit the text directly in `app/page.tsx`.
 - **Add a new page:** create a new folder in `app/` with a `page.tsx` inside, e.g. `app/about/page.tsx` for `/about`.
 
+## Squarespace Build Notes
+
+This site is a working reference for a future Squarespace 7.1 rebuild. Two things to carry over deliberately:
+
+**Walk dates → Collection, not hand-built rows.** The three cards in "Upcoming dates" (`app/page.tsx`, the `walkCards` array) are structured as a plain list of items, each with the same fields: image, date, location, time, price. That's intentional — in Squarespace, this should become a Collection (an Events collection is the natural fit) with a Summary Block pulling from it, not three manually duplicated blocks. Whoever's editing dates week to week should be adding/editing collection items, not rebuilding a 4-block group each time.
+
+**Card sections (Corporate, email signup) — CSS dependency.** These two sections show a coloured card (Loam / Birch) sitting inside a section of a different colour. Squarespace can't do a single seamless card across multiple blocks natively — each block only gets its own independently-rounded background. The real build should use this fallback-safe approach:
+- **Base state (always on, no CSS needed):** every block in the group (eyebrow, heading, body text, button) gets its own matching background colour, corner radius, and padding, natively, via each block's own Design settings. On its own this looks like a stack of individually-rounded blocks — not the seamless card, but presentable and legible on any Squarespace version.
+- **Enhancement (Custom CSS, optional):** target the wrapper Squarespace generates around that block group (inspect the live page to get its exact class — Fluid Engine's row/column wrapper classes aren't stable enough to hardcode here sight-unseen) and zero out the touching edges: remove the border-radius on the inner-facing corners of each block, and zero the gap between them, so they visually merge into one card.
+- **Why this is safe:** the enhancement CSS only ever *removes* radius and spacing — it never hides content, repositions anything, or depends on the base state being absent. If Squarespace changes its markup and the wrapper selector stops matching, the CSS silently does nothing and the section just reverts to the base state (individually-rounded blocks). It cannot produce overlapping, clipped, or unreadable content.
+- **How to check it's working:** open the section in a browser, inspect the card visually — if you see one continuous rounded rectangle, the enhancement is active; if you see 3–4 separate rounded pieces with small gaps, the enhancement CSS isn't matching (harmless, just less polished) and needs re-pointing at the current markup.
+
 ## Recent Changes
 
 - 2026-09-20: Built the homepage from your detailed brief — brand colors/fonts, navigation, footer, and all 9 homepage sections with your exact copy. Flagged placeholder content (guide bio, walk card details, Instagram link) and listed required photo slots above.
 - 2026-09-20: Consistency pass — separated the email signup section from Corporate/Footer with a Birch band so colored sections never sit adjacent; converted ambiguous button-styled links to real underlined text links; unified all body text onto two shared width measures; fixed the Meet-the-guide section's image-driven padding asymmetry; matched the footer tagline's letter spacing to the eyebrows; rebuilt Corporate as a contained card instead of a full-bleed band; introduced a two-tier heading hierarchy (What a walk is / Upcoming dates read larger); changed heading font to Fraunces weight 500 with conventional (WONK 0) letterforms; renamed the ambiguous "What a walk is" link to "What to expect."
 - 2026-09-20: Made the hero's "What to expect" a real secondary button (was a mismatched text link) matching the primary button's height exactly; reverted email signup back to Lichen so Bedrock Babes/Corporate/Footer don't read as an unbroken Birch run; rebuilt the signup section as a static facts row above a Birch card containing a wider (560px), height-matched email field + button and a reassurance line.
+- 2026-09-20: Removed unconfirmed group-size numbers from copy (facts row and "We gather" step now say "small group(s)" instead of a specific number). Removed the Fraunces WONK axis setting — Squarespace can't control it and we couldn't verify it would survive the move, so it wasn't worth the dependency; weight stays at 500. Added Squarespace Build Notes documenting the walk-dates-as-Collection plan and the exact fallback-safe CSS approach for the Corporate/signup card treatments.

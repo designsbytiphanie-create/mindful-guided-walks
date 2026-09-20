@@ -22,7 +22,6 @@ body {
   }
 
   .heading-type {
-    font-variation-settings: "WONK" 0;
     font-family: var(--heading-type);
   }
 }
