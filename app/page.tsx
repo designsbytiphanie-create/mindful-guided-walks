@@ -40,10 +40,10 @@ export default function Home() {
         <div className="relative h-[33vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
-            alt="Tall forest trees with warm evening light filtering through the canopy onto a sunlit path"
+            alt="Sunbeams filtering through tall forest trees onto a dirt path"
             fill
             sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-[50%_78%] saturate-[.85]"
+            className="object-cover object-[50%_75%] saturate-[.85]"
             priority
           />
         </div>
