@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-[family-name:var(--font-heading)] text-xl font-semibold text-forest-ink"
+          className="heading-type text-xl font-medium text-forest-ink"
         >
           Mindful Guided Walks
         </Link>

@@ -7,8 +7,7 @@ import { Footer } from "@/components/Footer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["600"],
-  variable: "--font-heading",
+  variable: "--heading-type",
   display: "swap",
 });
 

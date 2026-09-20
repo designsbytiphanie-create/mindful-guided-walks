@@ -13,10 +13,10 @@ export function Footer() {
   return (
     <footer className="bg-deep-moss text-birch">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <p className="font-[family-name:var(--font-heading)] text-[32px] font-semibold">
+        <p className="heading-type text-[32px] font-medium">
           Mindful Guided Walks
         </p>
-        <p className="mt-1 text-[16px] tracking-wide">
+        <p className="mt-1 text-[16px] tracking-widest">
           GO OUTSIDE · GO WITHIN
         </p>
         <p className="mt-4 text-base">North Shore, Massachusetts</p>

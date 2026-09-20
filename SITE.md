@@ -13,8 +13,11 @@
   - Deep Moss `#33482F` — dark bands and hover states
   - Loam `#5B4633` — earth tone, borders
   - Forest Ink `#141C13` — headings and body text
-- **Fonts:** Fraunces SemiBold (headings), Literata Regular (body) — both loaded from Google Fonts via `next/font`.
-- **Buttons:** Leaf-shaped radius (22px/2px/22px/2px, sharp corners top-right and bottom-left). Primary = Fern fill + Forest Ink text (inverts to Birch fill on dark backgrounds). Secondary = 1px Loam border, no fill.
+- **Fonts:** Fraunces at weight 500 with the WONK axis set to 0 for conventional letterforms (headings + both wordmarks), Literata Regular (body) — both loaded from Google Fonts via `next/font` as full variable fonts.
+- **Buttons:** Leaf-shaped radius (22px/2px/22px/2px, sharp corners top-right and bottom-left). Primary = Fern fill + Forest Ink text (inverts to Birch fill on dark backgrounds).
+- **Text links** (as opposed to buttons): underlined, Loam on light backgrounds / Lichen on dark, with a Deep Moss/Birch hover shift. Used for secondary, non-CTA actions like "What to expect" and "See all dates."
+- **Text measures:** two shared widths only — 672px for section intros, 448px for supporting/list body copy.
+- **Heading hierarchy:** two sizes — primary (48px, used for "What a walk is" and "Upcoming dates" only) and supporting (36px, everything else).
 
 ## Pages
 
@@ -29,7 +32,7 @@
 4. **Meet the guide** (`#guide`) — Birch background, portrait + placeholder bio for Terry.
 5. **Why it works** (`#why-it-works`) — Deep Moss background, Birch text, forest bathing explainer.
 6. **Bedrock Babes** (`#bedrock-babes`) — Birch background, centered, extra whitespace, one photo slot.
-7. **Corporate** (`#corporate`) — Loam background, Birch text, Enquire button (links to `/corporate`).
+7. **Corporate** (`#corporate`) — Birch section with a Loam card (rounded, hugs its content) holding the copy and Enquire button, so it doesn't read as an empty full-bleed color band.
 8. **Email signup** (`#signup`) — Lichen background, email field + Sign me up button (front-end only, not wired to an email service yet).
 9. **Footer** — wordmark, tagline, location, repeated nav, Liability waiver + Instagram links.
 
@@ -37,7 +40,8 @@
 
 - **Navbar** (`components/Navbar.tsx`) — wordmark, nav links, Contact button, mobile hamburger menu. Lives in the root layout so it's on every page.
 - **Footer** (`components/Footer.tsx`) — also in the root layout.
-- **Button** (`components/Button.tsx`) — primary / primary-inverted / secondary variants.
+- **Button** (`components/Button.tsx`) — primary / primary-inverted variants.
+- **TextLink** (`components/TextLink.tsx`) — underlined inline links, separate from buttons.
 - **PhotoSlot** (`components/PhotoSlot.tsx`) — placeholder for photography: Lichen fill with "Photograph" in Loam at 14px, until real photos are supplied.
 - **EmailSignupForm** (`components/EmailSignupForm.tsx`) — the signup form.
 
@@ -68,3 +72,4 @@ Once you send over photos and the missing text, I'll drop them in.
 ## Recent Changes
 
 - 2026-09-20: Built the homepage from your detailed brief — brand colors/fonts, navigation, footer, and all 9 homepage sections with your exact copy. Flagged placeholder content (guide bio, walk card details, Instagram link) and listed required photo slots above.
+- 2026-09-20: Consistency pass — separated the email signup section from Corporate/Footer with a Birch band so colored sections never sit adjacent; converted ambiguous button-styled links to real underlined text links; unified all body text onto two shared width measures; fixed the Meet-the-guide section's image-driven padding asymmetry; matched the footer tagline's letter spacing to the eyebrows; rebuilt Corporate as a contained card instead of a full-bleed band; introduced a two-tier heading hierarchy (What a walk is / Upcoming dates read larger); changed heading font to Fraunces weight 500 with conventional (WONK 0) letterforms; renamed the ambiguous "What a walk is" link to "What to expect."
