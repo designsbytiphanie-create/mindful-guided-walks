@@ -24,7 +24,7 @@ export function EmailSignupForm() {
       </div>
       <button
         type="submit"
-        className="inline-flex items-center justify-center rounded-[22px_2px_22px_2px] bg-fern px-6 py-3 text-base font-semibold text-forest-ink transition-colors hover:bg-deep-moss hover:text-birch"
+        className="inline-flex items-center justify-center rounded-lg bg-fern px-6 py-3 text-base font-semibold text-forest-ink transition-colors hover:bg-deep-moss hover:text-birch"
       >
         Sign me up
       </button>
