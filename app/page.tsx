@@ -80,7 +80,7 @@ export default function Home() {
               },
               {
                 title: "We walk slowly",
-                body: "Simple invitations to notice what is around you, and what is happening inside you. There is no distance to cover and nowhere to be.",
+                body: "Simple invitations to notice what is around you, and what is happening inside you. The walking is slow on purpose. Nobody is counting steps or checking the time.",
               },
               {
                 title: "We sit for tea",
