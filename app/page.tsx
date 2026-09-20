@@ -37,7 +37,7 @@ export default function Home() {
     <main>
       {/* 1. Hero */}
       <section className="relative flex max-h-[88vh] flex-col overflow-hidden bg-deep-moss md:max-h-none md:min-h-[max(640px,min(78vh,780px))] md:flex-row md:items-center">
-        <div className="relative h-[39vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
+        <div className="relative h-[37vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
             alt="Sunbeams filtering through tall forest trees onto a dirt path"
@@ -47,17 +47,17 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative flex min-h-0 flex-1 flex-col justify-center px-6 py-4 md:flex-none md:w-[45%] md:px-12 md:py-24 lg:px-16">
+        <div className="relative px-6 pt-8 pb-10 md:flex md:min-h-0 md:flex-1 md:flex-col md:justify-center md:px-12 md:py-24 lg:px-16">
           <p className="text-[13px] font-medium uppercase tracking-[1.4px] text-lichen md:text-base md:tracking-widest">
             GO OUTSIDE · GO WITHIN
           </p>
-          <h1 className="heading-type mt-2 text-4xl font-medium leading-tight text-birch sm:text-5xl md:mt-4">
+          <h1 className="heading-type mt-3 text-3xl font-medium leading-tight text-birch sm:text-5xl md:mt-4">
             The forest is already working. We slow down enough to notice.
           </h1>
-          <p className={`mt-3 ${measureIntro} text-lg text-birch md:mt-6`}>
+          <p className={`mt-4 ${measureIntro} text-lg text-birch md:mt-6`}>
             Two hours. Half a mile. A tea ceremony among the trees.
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3 md:mt-8 md:gap-4">
+          <div className="mt-7 flex flex-wrap items-center gap-3 md:mt-8 md:gap-4">
             <Button
               href="#dates"
               variant="primary-inverted"
