@@ -78,7 +78,7 @@ export default function Home() {
             opposite of a hike.
           </p>
 
-          <div className="mt-12 flex flex-col gap-10">
+          <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "We gather",
@@ -93,19 +93,22 @@ export default function Home() {
                 body: "A tea ceremony in a circle among the trees before we part.",
               },
             ].map((step, i) => (
-              <div key={step.title} className="flex gap-6">
+              <div key={step.title}>
+                <PhotoSlot
+                  aspect="aspect-[4/5]"
+                  name={`${step.title} — placeholder photograph`}
+                  background="birch"
+                />
                 <span
-                  className={`${heading} text-2xl text-loam`}
+                  className="heading-type mt-4 block text-[64px] font-medium leading-none text-lichen"
                   aria-hidden="true"
                 >
                   0{i + 1}
                 </span>
-                <div>
-                  <h3 className={`${heading} text-xl`}>{step.title}</h3>
-                  <p className={`mt-2 ${measureBody} text-lg text-forest-ink`}>
-                    {step.body}
-                  </p>
-                </div>
+                <h3 className={`${heading} mt-2 text-xl`}>{step.title}</h3>
+                <p className={`mt-2 ${measureBody} text-lg text-forest-ink`}>
+                  {step.body}
+                </p>
               </div>
             ))}
           </div>
@@ -126,7 +129,11 @@ export default function Home() {
                 key={card.date}
                 className="overflow-hidden rounded-lg bg-birch"
               >
-                <PhotoSlot aspect="aspect-square" name="Walk card photograph" />
+                <PhotoSlot
+                  aspect="aspect-square"
+                  name="Walk card photograph"
+                  background="lichen"
+                />
                 <div className="p-6">
                   <h3 className={`${heading} text-lg`}>{card.date}</h3>
                   <p className="mt-2 text-base text-forest-ink">
@@ -151,6 +158,8 @@ export default function Home() {
           <PhotoSlot
             aspect="aspect-[4/5]"
             name="Portrait of the guide, Terry"
+            background="birch"
+            label="Portrait to come"
             className="w-full md:max-w-md"
           />
           <div>
@@ -182,10 +191,34 @@ export default function Home() {
             Forest bathing, or shinrin-yoku, began in Japan in 1982 as a
             public health answer to everyday stress. It is not exercise and
             it is not a hike. It is taking the forest in through your
-            senses. Research since has linked time among trees to lower
-            blood pressure, reduced stress hormones and better sleep.
+            senses.
           </p>
-          <Button href="/about" variant="primary-inverted" className="mt-8">
+
+          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Lower blood pressure",
+                body: "Studies in Japan have measured drops in blood pressure and heart rate after time spent among trees.",
+              },
+              {
+                title: "Less stress hormone",
+                body: "Research has linked forest walks to reduced cortisol, the body's main stress hormone.",
+              },
+              {
+                title: "Better sleep",
+                body: "Participants in several studies reported sleeping longer and more deeply afterwards.",
+              },
+            ].map((finding) => (
+              <div key={finding.title}>
+                <h3 className="heading-type text-xl font-medium text-birch">
+                  {finding.title}
+                </h3>
+                <p className="mt-2 text-lg text-lichen">{finding.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <Button href="/about" variant="primary-inverted" className="mt-10">
             More about the practice
           </Button>
         </div>
@@ -207,6 +240,7 @@ export default function Home() {
           <PhotoSlot
             aspect="aspect-[3/2]"
             name="Bedrock Babes photograph"
+            background="birch"
             className={`mx-auto mt-10 ${measureIntro}`}
           />
           <TextLink href="/bedrock-babes" className="mt-10 inline-block">
