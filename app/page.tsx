@@ -76,7 +76,7 @@ export default function Home() {
             {[
               {
                 title: "We gather",
-                body: "A small group, never more than ten, meeting at the trailhead.",
+                body: "A small group meeting at the trailhead.",
               },
               {
                 title: "We walk slowly",
@@ -237,7 +237,7 @@ export default function Home() {
       <section id="signup" className="bg-lichen">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <p className={`${eyebrow} text-loam text-center`}>
-            TWO HOURS · HALF A MILE · NEVER MORE THAN TEN · TEA AT THE END
+            TWO HOURS · HALF A MILE · SMALL GROUPS · TEA AT THE END
           </p>
           <div className="mx-auto mt-8 max-w-[656px] rounded-lg bg-birch p-8 text-center md:p-12">
             <h2 className={`${heading} text-3xl sm:text-4xl`}>
