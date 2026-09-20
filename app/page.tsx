@@ -79,7 +79,7 @@ export default function Home() {
       {/* 2. What a walk is */}
       <section id="what-a-walk-is" className="bg-birch">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <p className={`${eyebrow} text-loam`}>WHAT A WALK IS</p>
+          <p className={`${eyebrow} text-loam`}>WHAT TO EXPECT</p>
           <h2 className={`${heading} mt-4 text-4xl sm:text-5xl`}>
             Two hours, half a mile, and a cup of tea.
           </h2>
