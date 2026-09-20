@@ -1,0 +1,70 @@
+# Mindful Guided Walks
+
+> Two hours. Half a mile. A tea ceremony among the trees.
+
+## Brand Identity
+
+- **Personality:** Grounded, unhurried, sincere — a wellness practice, not a hike or a spa.
+- **Audience:** Women 45+, mostly on mobile. Body text is never below 16px and every text/background pairing is checked against WCAG AA.
+- **Colors:**
+  - Birch `#F1F0E4` — page background
+  - Lichen `#CBD4B4` — fills and cards
+  - Fern `#6E8C4F` — primary accent, button fills only (fails AA as text)
+  - Deep Moss `#33482F` — dark bands and hover states
+  - Loam `#5B4633` — earth tone, borders
+  - Forest Ink `#141C13` — headings and body text
+- **Fonts:** Fraunces SemiBold (headings), Literata Regular (body) — both loaded from Google Fonts via `next/font`.
+- **Buttons:** Leaf-shaped radius (22px/2px/22px/2px, sharp corners top-right and bottom-left). Primary = Fern fill + Forest Ink text (inverts to Birch fill on dark backgrounds). Secondary = 1px Loam border, no fill.
+
+## Pages
+
+- **Homepage** (`/`) — fully built. See section breakdown below.
+- **Walks** (`/walks`), **Dates** (`/dates`), **Bedrock Babes** (`/bedrock-babes`), **Corporate** (`/corporate`), **About** (`/about`), **Contact** (`/contact`), **Liability waiver** (`/liability-waiver`) — linked from navigation and footer, **not yet built**. Visiting them in the preview will 404 until we build them.
+
+## Homepage Sections
+
+1. **Hero** — split layout, Lichen color panel + forest photo slot. Buttons jump to on-page anchors (`#dates`, `#what-a-walk-is`).
+2. **What a walk is** — Birch background, three-step numbered list (We gather / We walk slowly / We sit for tea).
+3. **Upcoming dates** (`#dates`) — Lichen background, three walk cards (image, date, location, time, price) — card details are placeholder data, see below.
+4. **Meet the guide** (`#guide`) — Birch background, portrait + placeholder bio for Terry.
+5. **Why it works** (`#why-it-works`) — Deep Moss background, Birch text, forest bathing explainer.
+6. **Bedrock Babes** (`#bedrock-babes`) — Birch background, centered, extra whitespace, one photo slot.
+7. **Corporate** (`#corporate`) — Loam background, Birch text, Enquire button (links to `/corporate`).
+8. **Email signup** (`#signup`) — Lichen background, email field + Sign me up button (front-end only, not wired to an email service yet).
+9. **Footer** — wordmark, tagline, location, repeated nav, Liability waiver + Instagram links.
+
+## Components
+
+- **Navbar** (`components/Navbar.tsx`) — wordmark, nav links, Contact button, mobile hamburger menu. Lives in the root layout so it's on every page.
+- **Footer** (`components/Footer.tsx`) — also in the root layout.
+- **Button** (`components/Button.tsx`) — primary / primary-inverted / secondary variants.
+- **PhotoSlot** (`components/PhotoSlot.tsx`) — placeholder for photography: Lichen fill with "Photograph" in Loam at 14px, until real photos are supplied.
+- **EmailSignupForm** (`components/EmailSignupForm.tsx`) — the signup form.
+
+## Content still needed from you
+
+**Placeholder text on the page (clearly marked, needs your real copy):**
+- Guide bio in "Meet the guide" — needs 2-3 real sentences about Terry.
+- All three walk cards in "Upcoming dates" — need real date, location, time, and price for each.
+- Instagram footer link currently points to `#` — needs your real Instagram URL.
+
+**Image slots needed (all currently gray "Photograph" placeholders):**
+
+| Slot | Where | Aspect ratio | Minimum file size (2x) |
+|---|---|---|---|
+| Hero forest photo | Hero section, right side | 4:5 (portrait) | 1200×1500px |
+| Guide portrait | Meet the guide section | 4:5 (portrait) | 960×1200px |
+| Walk card photos (×3) | Upcoming dates cards | 1:1 (square) | 800×800px |
+| Bedrock Babes photo | Bedrock Babes section | 3:2 (landscape) | 1600×1067px |
+
+Once you send over photos and the missing text, I'll drop them in.
+
+## How to Customize
+
+- **Colors:** all defined once in `app/globals.css` — change a hex value there and it updates everywhere.
+- **Copy:** edit the text directly in `app/page.tsx`.
+- **Add a new page:** create a new folder in `app/` with a `page.tsx` inside, e.g. `app/about/page.tsx` for `/about`.
+
+## Recent Changes
+
+- 2026-09-20: Built the homepage from your detailed brief — brand colors/fonts, navigation, footer, and all 9 homepage sections with your exact copy. Flagged placeholder content (guide bio, walk card details, Instagram link) and listed required photo slots above.

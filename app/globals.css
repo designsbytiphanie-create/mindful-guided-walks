@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-birch: #f1f0e4;
+  --color-lichen: #cbd4b4;
+  --color-fern: #6e8c4f;
+  --color-deep-moss: #33482f;
+  --color-loam: #5b4633;
+  --color-forest-ink: #141c13;
+}
+
+body {
+  background: var(--color-birch);
+  color: var(--color-forest-ink);
+}
+
+@layer base {
+  *:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
