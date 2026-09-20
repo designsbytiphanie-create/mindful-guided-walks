@@ -16,7 +16,7 @@ export function Footer() {
         <p className="heading-type text-[32px] font-medium">
           Mindful Guided Walks
         </p>
-        <p className="mt-1 text-[16px] tracking-widest">
+        <p className="mt-1 text-[16px] font-medium tracking-widest text-lichen">
           GO OUTSIDE · GO WITHIN
         </p>
         <p className="mt-4 text-base">North Shore, Massachusetts</p>

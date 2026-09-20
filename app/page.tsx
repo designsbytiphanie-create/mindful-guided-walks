@@ -5,7 +5,7 @@ import { PhotoSlot } from "@/components/PhotoSlot";
 import { EmailSignupForm } from "@/components/EmailSignupForm";
 
 const heading = "heading-type font-medium text-forest-ink";
-const eyebrow = "text-base font-semibold uppercase tracking-widest";
+const eyebrow = "text-base font-medium uppercase tracking-widest";
 
 // Two shared text measures — every paragraph maps onto one of these.
 const measureIntro = "max-w-2xl"; // 672px — section intro paragraphs
@@ -36,26 +36,26 @@ export default function Home() {
   return (
     <main>
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-deep-moss md:flex md:min-h-[max(720px,calc(100vh-89px))] md:items-center lg:min-h-[max(720px,calc(100vh-81px))]">
-        <div className="relative aspect-[4/5] min-h-[420px] w-full md:absolute md:inset-y-0 md:right-0 md:aspect-auto md:min-h-0 md:w-[55%]">
+      <section className="relative flex max-h-[88vh] flex-col overflow-hidden bg-deep-moss md:max-h-none md:min-h-[max(640px,min(78vh,780px))] md:flex-row md:items-center">
+        <div className="relative h-[33vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
-            alt="Tall forest trees with warm evening light filtering through the canopy"
+            alt="Tall forest trees with warm evening light filtering through the canopy onto a sunlit path"
             fill
             sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover saturate-[.65]"
+            className="object-cover object-[50%_78%] saturate-[.85]"
             priority
           />
         </div>
-        <div className="relative px-6 py-16 md:w-[45%] md:px-12 md:py-24 lg:px-16">
-          <p className={`${eyebrow} text-birch`}>GO OUTSIDE · GO WITHIN</p>
-          <h1 className="heading-type mt-4 text-4xl font-medium leading-tight text-birch sm:text-5xl">
+        <div className="relative flex min-h-0 flex-1 flex-col justify-center px-6 py-4 md:flex-none md:w-[45%] md:px-12 md:py-24 lg:px-16">
+          <p className={`${eyebrow} text-lichen`}>GO OUTSIDE · GO WITHIN</p>
+          <h1 className="heading-type mt-2 text-4xl font-medium leading-tight text-birch sm:text-5xl md:mt-4">
             The forest is already working. We slow down enough to notice.
           </h1>
-          <p className={`mt-6 ${measureIntro} text-lg text-birch`}>
+          <p className={`mt-3 ${measureIntro} text-lg text-birch md:mt-6`}>
             Two hours. Half a mile. A tea ceremony among the trees.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-8 md:gap-4">
             <Button href="#dates" variant="primary-inverted">
               Upcoming dates
             </Button>
@@ -174,7 +174,7 @@ export default function Home() {
       {/* 5. Why it works */}
       <section id="why-it-works" className="bg-deep-moss">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <p className={`${eyebrow} text-birch`}>WHY IT WORKS</p>
+          <p className={`${eyebrow} text-lichen`}>WHY IT WORKS</p>
           <h2 className="mt-4 heading-type text-3xl font-medium text-birch sm:text-4xl">
             Forest bathing, in plain terms.
           </h2>
@@ -219,7 +219,7 @@ export default function Home() {
       <section id="corporate" className="bg-birch">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="rounded-lg bg-loam p-8 md:p-12">
-            <p className={`${eyebrow} text-birch`}>FOR TEAMS</p>
+            <p className={`${eyebrow} text-lichen`}>FOR TEAMS</p>
             <h2 className="mt-4 heading-type text-3xl font-medium text-birch sm:text-4xl">
               Winter sessions over Zoom
             </h2>
