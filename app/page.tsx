@@ -37,29 +37,39 @@ export default function Home() {
     <main>
       {/* 1. Hero */}
       <section className="relative flex max-h-[88vh] flex-col overflow-hidden bg-deep-moss md:max-h-none md:min-h-[max(640px,min(78vh,780px))] md:flex-row md:items-center">
-        <div className="relative h-[33vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
+        <div className="relative h-[39vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
             alt="Sunbeams filtering through tall forest trees onto a dirt path"
             fill
             sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-[50%_75%] saturate-[.85]"
+            className="object-cover object-[50%_50%] saturate-[.85] md:object-[50%_75%]"
             priority
           />
         </div>
         <div className="relative flex min-h-0 flex-1 flex-col justify-center px-6 py-4 md:flex-none md:w-[45%] md:px-12 md:py-24 lg:px-16">
-          <p className={`${eyebrow} text-lichen`}>GO OUTSIDE · GO WITHIN</p>
+          <p className="text-[13px] font-medium uppercase tracking-[1.4px] text-lichen md:text-base md:tracking-widest">
+            GO OUTSIDE · GO WITHIN
+          </p>
           <h1 className="heading-type mt-2 text-4xl font-medium leading-tight text-birch sm:text-5xl md:mt-4">
             The forest is already working. We slow down enough to notice.
           </h1>
           <p className={`mt-3 ${measureIntro} text-lg text-birch md:mt-6`}>
             Two hours. Half a mile. A tea ceremony among the trees.
           </p>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-8 md:gap-4">
-            <Button href="#dates" variant="primary-inverted">
+          <div className="mt-4 flex flex-wrap items-center gap-3 md:mt-8 md:gap-4">
+            <Button
+              href="#dates"
+              variant="primary-inverted"
+              className="!px-4 md:!px-6"
+            >
               Upcoming dates
             </Button>
-            <Button href="#what-a-walk-is" variant="secondary-inverted">
+            <Button
+              href="#what-a-walk-is"
+              variant="secondary-inverted"
+              className="!px-4 md:!px-6"
+            >
               What to expect
             </Button>
           </div>
@@ -218,9 +228,9 @@ export default function Home() {
             ))}
           </div>
 
-          <Button href="/about" variant="primary-inverted" className="mt-10">
+          <TextLink href="/about" dark className="mt-10 inline-block">
             More about the practice
-          </Button>
+          </TextLink>
         </div>
       </section>
 
@@ -262,11 +272,7 @@ export default function Home() {
               anyone at your organization. Guided walks for teams are
               available in season.
             </p>
-            <Button
-              href="/corporate"
-              variant="primary-inverted"
-              className="mt-8"
-            >
+            <Button href="/corporate" variant="primary-lichen" className="mt-8">
               Enquire
             </Button>
           </div>
