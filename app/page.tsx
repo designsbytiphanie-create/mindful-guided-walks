@@ -47,11 +47,11 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative px-6 pt-8 pb-10 md:flex md:min-h-0 md:flex-1 md:flex-col md:justify-center md:px-12 md:py-24 lg:px-16">
+        <div className="relative px-6 pt-8 pb-10 md:flex md:min-h-0 md:w-[45%] md:flex-none md:flex-col md:justify-center md:px-12 md:py-24 lg:px-16">
           <p className="text-[13px] font-medium uppercase tracking-[1.4px] text-lichen md:text-base md:tracking-widest">
             GO OUTSIDE · GO WITHIN
           </p>
-          <h1 className="heading-type mt-3 text-[26px] font-medium leading-tight text-birch sm:text-5xl md:mt-4">
+          <h1 className="heading-type mt-3 text-[26px] font-medium leading-tight text-birch md:mt-4 md:text-5xl">
             The forest is already working. We slow down enough to notice.
           </h1>
           <p className={`mt-4 ${measureIntro} text-lg text-birch md:mt-6`}>
