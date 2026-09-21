@@ -37,7 +37,7 @@ export default function Home() {
     <main>
       {/* 1. Hero */}
       <section className="relative flex max-h-[88vh] flex-col overflow-hidden bg-deep-moss md:max-h-none md:min-h-[max(640px,min(78vh,780px))] md:flex-row md:items-center">
-        <div className="relative h-[37vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
+        <div className="relative h-[43vh] w-full flex-shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[55%]">
           <Image
             src="/images/hero-forest.jpg"
             alt="Sunbeams filtering through tall forest trees onto a dirt path"
@@ -51,7 +51,7 @@ export default function Home() {
           <p className="text-[13px] font-medium uppercase tracking-[1.4px] text-lichen md:text-base md:tracking-widest">
             GO OUTSIDE · GO WITHIN
           </p>
-          <h1 className="heading-type mt-3 text-3xl font-medium leading-tight text-birch sm:text-5xl md:mt-4">
+          <h1 className="heading-type mt-3 text-[26px] font-medium leading-tight text-birch sm:text-5xl md:mt-4">
             The forest is already working. We slow down enough to notice.
           </h1>
           <p className={`mt-4 ${measureIntro} text-lg text-birch md:mt-6`}>
@@ -272,7 +272,7 @@ export default function Home() {
               anyone at your organization. Guided walks for teams are
               available in season.
             </p>
-            <Button href="/corporate" variant="primary-lichen" className="mt-8">
+            <Button href="/corporate" variant="primary-inverted" className="mt-8">
               Enquire
             </Button>
           </div>
