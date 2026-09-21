@@ -110,7 +110,7 @@ export default function Home() {
                   background="birch"
                 />
                 <span
-                  className="heading-type mt-4 block text-[64px] font-medium leading-none text-lichen"
+                  className="heading-type mt-4 block text-[64px] font-medium leading-none text-loam/40"
                   aria-hidden="true"
                 >
                   0{i + 1}
@@ -156,7 +156,7 @@ export default function Home() {
             ))}
           </div>
 
-          <TextLink href="/dates" className="mt-10 inline-block">
+          <TextLink href="/dates" className="mt-10">
             See all dates
           </TextLink>
         </div>
@@ -183,7 +183,7 @@ export default function Home() {
               PLACEHOLDER — two to three sentences introducing Terry will go
               here.
             </p>
-            <TextLink href="/about" className="mt-8 inline-block">
+            <TextLink href="/about" className="mt-8">
               Read her story
             </TextLink>
           </div>
@@ -228,7 +228,7 @@ export default function Home() {
             ))}
           </div>
 
-          <TextLink href="/about" dark className="mt-10 inline-block">
+          <TextLink href="/about" dark className="mt-10">
             More about the practice
           </TextLink>
         </div>
@@ -253,7 +253,7 @@ export default function Home() {
             background="birch"
             className={`mx-auto mt-10 ${measureIntro}`}
           />
-          <TextLink href="/bedrock-babes" className="mt-10 inline-block">
+          <TextLink href="/bedrock-babes" className="mt-10">
             About Bedrock Babes
           </TextLink>
         </div>

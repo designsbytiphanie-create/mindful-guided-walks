@@ -19,7 +19,7 @@ export function TextLink({
   return (
     <Link
       href={href}
-      className={`underline decoration-1 underline-offset-4 text-base font-semibold transition-colors ${colors} ${className}`}
+      className={`inline-block py-2.5 underline decoration-1 underline-offset-4 text-base font-semibold transition-colors ${colors} ${className}`}
     >
       {children}
     </Link>
